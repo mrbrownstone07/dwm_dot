@@ -51,6 +51,7 @@ static const Layout layouts[] = {
 
 /* key definitions */
 #define MODKEY Mod4Mask
+#define Alt_L  Mod1Mask /* my added defination for left_alt_key used for vol control */
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -66,9 +67,9 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 
 /* my added commands for volume keys  */
-static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%",     NULL };
-static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%",     NULL };
-static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "toggle",  NULL };
+static const char *upvol[]   = { "amixer", "set", "Master", "3+",     NULL };
+static const char *downvol[] = { "amixer", "set", "Master", "3-",     NULL };
+static const char *mutevol[] = { "amixer", "set", "Master", "toggle", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -108,9 +109,9 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-    { 0,              XF86XK_AudioLowerVolume, spawn, {.v = downvol } },
-    { 0,              XF86XK_AudioMute,        spawn, {.v = mutevol } },
-    { 0,              XF86XK_AudioRaiseVolume, spawn, {.v = upvol   } },
+    { Alt_L,                        XK_F12,    spawn,          {.v = upvol   } },
+    { Alt_L,                        XK_F11,    spawn,          {.v = downvol } },
+    { Alt_L,                        XK_F10,    spawn,          {.v = mutevol } },
 };
 
 /* button definitions */
