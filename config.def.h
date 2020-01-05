@@ -41,6 +41,7 @@ static const Rule rules[] = {
 	{ "Transmission-gtk", 	NULL,		NULL,		1 << 3,			1,		        -1 },
 	{ "mpv",				NULL,		NULL,		1 << 7,			0,		        -1 },
 	{ "Pcmanfm",			NULL,		NULL,		1 << 5,			0,		        -1 },
+    { "tabbed",             NULL,       NULL,       1 << 2,         0,              -1 },
 };
 
 /* layout(s) */
@@ -69,7 +70,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_bg, "-nf", col_fg_sel, "-sb", col_fg, "-sf", col_bg, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_bg, "-nf", col_fg, "-sb", col_fg, "-sf", col_bg, NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 /* my added commands for volume keys  */
