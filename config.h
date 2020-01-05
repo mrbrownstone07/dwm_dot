@@ -32,9 +32,15 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	/* class      			instance    title       tags mask       isfloating      monitor */
+	{ "Gimp",     			NULL,       NULL,       0,              1,              -1 },
+	{ "firefox",  			NULL,       NULL,       1 << 2,         0,              -1 },
+    { "code", 	  			NULL,		NULL,		1 << 1,		    0,		        -1 },
+	{ "Mousepad",  			NULL,		NULL,		1 << 1,		    0,		        -1 },
+	{ "code-oss",  			NULL,		NULL,		1 << 1,			0,		        -1 },
+	{ "Transmission-gtk", 	NULL,		NULL,		1 << 3,			1,		        -1 },
+	{ "mpv",				NULL,		NULL,		1 << 7,			0,		        -1 },
+	{ "Pcmanfm",			NULL,		NULL,		1 << 5,			0,		        -1 },
 };
 
 /* layout(s) */
@@ -84,7 +90,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
-	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
+	{ MODKEY|ShiftMask,             XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
@@ -108,7 +114,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	{ MODKEY|ShiftMask,             XK_0,      quit,           {0} },
     { Alt_L,                        XK_F12,    spawn,          {.v = upvol   } },
     { Alt_L,                        XK_F11,    spawn,          {.v = downvol } },
     { Alt_L,                        XK_F10,    spawn,          {.v = mutevol } },
