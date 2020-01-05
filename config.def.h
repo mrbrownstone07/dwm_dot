@@ -9,7 +9,7 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "monospace:size=9" };
 static const char dmenufont[]       = "monospace:size=9";
 static const char col_bg[]          = "#000000";
-static const char col_fg[]          = "#747272";
+static const char col_fg[]          = "#E99280";
 static const char col_fg_sel[]      = "#EBD8A1";
 static const unsigned int baralpha = 0xd0;
 static const unsigned int borderalpha = OPAQUE;
@@ -69,7 +69,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_bg, "-nf", col_fg, "-sb", col_bg, "-sf", col_fg_sel, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_bg, "-nf", col_fg_sel, "-sb", col_fg, "-sf", col_bg, NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 /* my added commands for volume keys  */
