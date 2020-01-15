@@ -6,17 +6,18 @@ static const unsigned int gappx     = 10;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=9" };
+static const char *fonts[]          = { "Mononoki Nerd Font:size=9" };
 static const char dmenufont[]       = "monospace:size=9";
-static const char col_bg[]          = "#000000";
-static const char col_fg[]          = "#E99280";
-static const char col_fg_sel[]      = "#EBD8A1";
+static const char col_bg[]          = "#1D2021";
+static const char col_fg[]          = "#EBDBB2";
+static const char col_fg_sel[]      = "#1D2021";
+static const char col_bg_sel[]      = "#458487";
 static const unsigned int baralpha = 0xd0;
 static const unsigned int borderalpha = OPAQUE;
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_fg, col_bg, col_fg},
-	[SchemeSel]  = { col_fg_sel, col_bg, col_fg_sel},
+	[SchemeNorm] = { col_fg, col_bg, col_bg},
+	[SchemeSel]  = { col_fg_sel, col_bg_sel, col_bg_sel},
 };
 static const unsigned int alphas[][3]      = {
 	/*               fg      bg        border     */
